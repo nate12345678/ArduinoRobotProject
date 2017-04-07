@@ -1,4 +1,4 @@
-//code to run while the bot sets up
+//code to run when the bot sets up
 void initialize() {
   pinMode(motor1[0], OUTPUT);
   pinMode(motor1[1], OUTPUT);
@@ -7,14 +7,14 @@ void initialize() {
 
 //code to run while enabled.
 void enabledLoop() {
-  setSpeed(motor1, .75);
-//  delay(500);
-//  setSpeed(motor1, -.75);
-//  delay(500);
+  setSpeed(motorLeft, float(analogRead(pot) / 1023.0));
+  setSpeed(motorRight, getSpeed(motorLeft));
 }
 
 //code to run while disabled. motors should be set to 0 here.
 void disabledLoop() {
- setSpeed(motor1, 0); 
+ setSpeed(motorLeft, 0);
+ setSpeed(motorRight, 0);
 }
+
 

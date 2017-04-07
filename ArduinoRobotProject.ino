@@ -6,7 +6,7 @@
 //  need to  be changed; instead use the RobotStates methods.
 //Status light meanings:
 //  no light: setup has not run, something is wrong
-//  solid light: setup is running, robot is DISABLED
+//  solid light: setup is running, or robot is DISABLED
 //  flashing slowly: robot is ENABLED
 
 
