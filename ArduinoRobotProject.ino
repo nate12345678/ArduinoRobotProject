@@ -18,13 +18,15 @@ const byte loopTime = 20;
 
 void setup() {
   //status light so that you know what the arduino is doing
-  setStatus(1);
+  setStatus(0);
   pinMode(LED_BUILTIN, OUTPUT);
   pinMode(enSwitch, INPUT_PULLUP);
+  Serial.begin(1000000);
+  Serial.println("initialize");
   updateStatus();
   init();
   // at end of loading, wait .1 sec
-  delay(100);
+  delay(1000);
 }
 
 
@@ -38,11 +40,12 @@ void loop() {
     setStatus(2);
   }
   delay(loopTime);
-  
+
   if (enabled) {
     loopCount++;
     if (loopCount % 25 == 0) {
       updateStatus();
+      Serial.println("Enabled");
       loopCount = 0;
     }
     enabledLoop();

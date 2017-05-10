@@ -1,5 +1,5 @@
 //These methods provide the code to control the status light of
-// the robot. THis should not need to be changed.
+// the robot. This should not need to be changed.
 
 byte statusMode = 0;
 bool statusState = false;

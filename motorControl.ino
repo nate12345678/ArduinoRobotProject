@@ -1,11 +1,11 @@
 //control methods for motors (don't touch)
 
-//sets speed of motor choosen. 
+//sets speed of motor choosen.
 //@param array to read
 //@param iSpeed to set (-1~1)
 void setSpeed(int motor[], float iSpeed) {
-  if(iSpeed == 0) {
-    if(motor[4] == 1) {
+  if (iSpeed == 0) {
+    if (motor[4] == 1) {
       digitalWrite(motor[1], LOW);
     } else {
       digitalWrite(motor[1], HIGH);
@@ -23,7 +23,7 @@ void setSpeed(int motor[], float iSpeed) {
     analogWrite(motor[2], int(-iSpeed * 255));
   }
   motor[3] = int(iSpeed * 255);
-  
+
 }
 
 float getSpeed(int motor[]) {
